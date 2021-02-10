@@ -50,6 +50,7 @@
             this.printRecieptButton = new System.Windows.Forms.Button();
             this.redLine = new System.Windows.Forms.Label();
             this.recieptOutputLabel = new System.Windows.Forms.Label();
+            this.newOrderButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // burgerOutputLabel
@@ -263,9 +264,20 @@
             this.recieptOutputLabel.Size = new System.Drawing.Size(328, 395);
             this.recieptOutputLabel.TabIndex = 21;
             // 
+            // newOrderButton
+            // 
+            this.newOrderButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.newOrderButton.Location = new System.Drawing.Point(359, 440);
+            this.newOrderButton.Name = "newOrderButton";
+            this.newOrderButton.Size = new System.Drawing.Size(328, 34);
+            this.newOrderButton.TabIndex = 22;
+            this.newOrderButton.Text = "New Order";
+            this.newOrderButton.UseVisualStyleBackColor = true;
+            // 
             // cashRegister
             // 
             this.ClientSize = new System.Drawing.Size(699, 486);
+            this.Controls.Add(this.newOrderButton);
             this.Controls.Add(this.recieptOutputLabel);
             this.Controls.Add(this.redLine);
             this.Controls.Add(this.printRecieptButton);
@@ -322,6 +334,7 @@
         private System.Windows.Forms.Button printRecieptButton;
         private System.Windows.Forms.Label redLine;
         private System.Windows.Forms.Label recieptOutputLabel;
+        private System.Windows.Forms.Button newOrderButton;
     }
 }
 
