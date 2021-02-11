@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.burgerOutputLabel = new System.Windows.Forms.Label();
-            this.friesOutput = new System.Windows.Forms.Label();
+            this.friesOutputLabel = new System.Windows.Forms.Label();
             this.drinkOutputLabel = new System.Windows.Forms.Label();
             this.burgersTextBox = new System.Windows.Forms.TextBox();
             this.friesTextBox = new System.Windows.Forms.TextBox();
@@ -43,7 +43,7 @@
             this.totalPriceLabel = new System.Windows.Forms.Label();
             this.blackLine = new System.Windows.Forms.Label();
             this.tenderedOutputLabel = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tenderedTextBox = new System.Windows.Forms.TextBox();
             this.changeButton = new System.Windows.Forms.Button();
             this.changeOutputLabel = new System.Windows.Forms.Label();
             this.changePriceLabel = new System.Windows.Forms.Label();
@@ -51,6 +51,7 @@
             this.redLine = new System.Windows.Forms.Label();
             this.recieptOutputLabel = new System.Windows.Forms.Label();
             this.newOrderButton = new System.Windows.Forms.Button();
+            this.NameLabel = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // burgerOutputLabel
@@ -63,15 +64,15 @@
             this.burgerOutputLabel.TabIndex = 0;
             this.burgerOutputLabel.Text = "Number of Burgers:";
             // 
-            // friesOutput
+            // friesOutputLabel
             // 
-            this.friesOutput.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.friesOutput.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.friesOutput.Location = new System.Drawing.Point(45, 78);
-            this.friesOutput.Name = "friesOutput";
-            this.friesOutput.Size = new System.Drawing.Size(148, 23);
-            this.friesOutput.TabIndex = 1;
-            this.friesOutput.Text = "Number of Fries:";
+            this.friesOutputLabel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.friesOutputLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.friesOutputLabel.Location = new System.Drawing.Point(45, 78);
+            this.friesOutputLabel.Name = "friesOutputLabel";
+            this.friesOutputLabel.Size = new System.Drawing.Size(148, 23);
+            this.friesOutputLabel.TabIndex = 1;
+            this.friesOutputLabel.Text = "Number of Fries:";
             // 
             // drinkOutputLabel
             // 
@@ -195,14 +196,14 @@
             this.tenderedOutputLabel.TabIndex = 14;
             this.tenderedOutputLabel.Text = "Tendered:";
             // 
-            // textBox1
+            // tenderedTextBox
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(237, 331);
-            this.textBox1.Multiline = true;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(88, 33);
-            this.textBox1.TabIndex = 15;
+            this.tenderedTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tenderedTextBox.Location = new System.Drawing.Point(237, 331);
+            this.tenderedTextBox.Multiline = true;
+            this.tenderedTextBox.Name = "tenderedTextBox";
+            this.tenderedTextBox.Size = new System.Drawing.Size(88, 33);
+            this.tenderedTextBox.TabIndex = 15;
             // 
             // changeButton
             // 
@@ -213,6 +214,7 @@
             this.changeButton.TabIndex = 16;
             this.changeButton.Text = "Calculate Change";
             this.changeButton.UseVisualStyleBackColor = true;
+            this.changeButton.Click += new System.EventHandler(this.ChangeButton_Click);
             // 
             // changeOutputLabel
             // 
@@ -242,6 +244,7 @@
             this.printRecieptButton.TabIndex = 19;
             this.printRecieptButton.Text = "Print Reciept";
             this.printRecieptButton.UseVisualStyleBackColor = true;
+            this.printRecieptButton.Click += new System.EventHandler(this.PrintRecieptButton_Click);
             // 
             // redLine
             // 
@@ -259,6 +262,7 @@
             this.recieptOutputLabel.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.recieptOutputLabel.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.recieptOutputLabel.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.recieptOutputLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.recieptOutputLabel.Location = new System.Drawing.Point(359, 42);
             this.recieptOutputLabel.Name = "recieptOutputLabel";
             this.recieptOutputLabel.Size = new System.Drawing.Size(328, 395);
@@ -274,9 +278,21 @@
             this.newOrderButton.Text = "New Order";
             this.newOrderButton.UseVisualStyleBackColor = true;
             // 
+            // NameLabel
+            // 
+            this.NameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.NameLabel.Location = new System.Drawing.Point(389, 68);
+            this.NameLabel.Name = "NameLabel";
+            this.NameLabel.Size = new System.Drawing.Size(267, 33);
+            this.NameLabel.TabIndex = 23;
+            this.NameLabel.Text = "Greasers Grill";
+            this.NameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.NameLabel.Visible = false;
+            // 
             // cashRegister
             // 
             this.ClientSize = new System.Drawing.Size(699, 486);
+            this.Controls.Add(this.NameLabel);
             this.Controls.Add(this.newOrderButton);
             this.Controls.Add(this.recieptOutputLabel);
             this.Controls.Add(this.redLine);
@@ -284,7 +300,7 @@
             this.Controls.Add(this.changePriceLabel);
             this.Controls.Add(this.changeOutputLabel);
             this.Controls.Add(this.changeButton);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tenderedTextBox);
             this.Controls.Add(this.tenderedOutputLabel);
             this.Controls.Add(this.blackLine);
             this.Controls.Add(this.totalPriceLabel);
@@ -298,7 +314,7 @@
             this.Controls.Add(this.friesTextBox);
             this.Controls.Add(this.burgersTextBox);
             this.Controls.Add(this.drinkOutputLabel);
-            this.Controls.Add(this.friesOutput);
+            this.Controls.Add(this.friesOutputLabel);
             this.Controls.Add(this.burgerOutputLabel);
             this.Name = "cashRegister";
             this.Text = "Cash Register";
@@ -310,10 +326,10 @@
         #endregion
 
         private System.Windows.Forms.Label burgersOutputLabel;
-        private System.Windows.Forms.Label friesOutputLabel;
+        //private System.Windows.Forms.Label friesOutputLabel;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label burgerOutputLabel;
-        private System.Windows.Forms.Label friesOutput;
+        private System.Windows.Forms.Label friesOutputLabel;
         private System.Windows.Forms.Label drinkOutputLabel;
         private System.Windows.Forms.TextBox burgersTextBox;
         private System.Windows.Forms.TextBox friesTextBox;
@@ -327,7 +343,7 @@
         private System.Windows.Forms.Label totalPriceLabel;
         private System.Windows.Forms.Label blackLine;
         private System.Windows.Forms.Label tenderedOutputLabel;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox tenderedTextBox;
         private System.Windows.Forms.Button changeButton;
         private System.Windows.Forms.Label changeOutputLabel;
         private System.Windows.Forms.Label changePriceLabel;
@@ -335,6 +351,7 @@
         private System.Windows.Forms.Label redLine;
         private System.Windows.Forms.Label recieptOutputLabel;
         private System.Windows.Forms.Button newOrderButton;
+        private System.Windows.Forms.Label NameLabel;
     }
 }
 
