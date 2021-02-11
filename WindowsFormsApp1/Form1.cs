@@ -28,7 +28,9 @@ namespace WindowsFormsApp1
         double totalPrice = 0;
         double changeDue = 0;
         double orderNumber = 132;
-
+        double totalBurgersPrice = 0;
+        double totalFriesPrice = 0;
+        double totalDrinksPrice = 0;
 
         public cashRegister()
         {
@@ -79,17 +81,100 @@ namespace WindowsFormsApp1
 
         private void PrintRecieptButton_Click(object sender, EventArgs e)
         {
-            NameLabel.Visible = true;
+            dateLabel.Text = "";
+            recieptNames.Text = "";
+            recieptFoodAmounts.Text = "";
+            recieptPrices.Text = "";
+            thankYouOutput.Text = "";
+
+            totalBurgersPrice = burgersNumber * burgerPrice;
+            totalFriesPrice = friesNumber * friesPrice;
+            totalDrinksPrice = drinksNumber * drinksPrice;
+
+            nameLabel.Visible = true;
 
             Refresh();
             Thread.Sleep(500);
 
-            recieptOutputLabel.Text += $"\n\n\nOrder Number {orderNumber++}";
+            dateLabel.Text += $"  Order Number {orderNumber++}";
 
             Refresh();
             Thread.Sleep(500);
 
-            recieptOutputLabel.Text += 
+            dateLabel.Text += $"\n  February 11, 2021";
+
+            Refresh();
+            Thread.Sleep(500);
+
+            recieptNames.Text += $"\n  Hamburgers";
+            recieptFoodAmounts.Text += $"\nx{burgersNumber} @";
+            recieptPrices.Text += $"\n{totalBurgersPrice.ToString("C")}";
+
+            Refresh();
+            Thread.Sleep(500);
+
+            recieptNames.Text += $"\n  Fries";
+            recieptFoodAmounts.Text += $"\nx{friesNumber} @";
+            recieptPrices.Text += $"\n{totalFriesPrice.ToString("C")}";
+
+            Refresh();
+            Thread.Sleep(500);
+
+            recieptNames.Text += $"\n  Drinks";
+            recieptFoodAmounts.Text += $"\nx{drinksNumber} @";
+            recieptPrices.Text += $"\n{totalDrinksPrice.ToString("C")}";
+
+            Refresh();
+            Thread.Sleep(500);
+
+            recieptNames.Text += $"\n\n  Subtotal";
+            recieptPrices.Text += $"\n\n{subTotalPrice.ToString("C")}";
+
+            Refresh();
+            Thread.Sleep(500);
+
+            recieptNames.Text += $"\n  Tax";
+            recieptPrices.Text += $"\n{taxAmount.ToString("C")}";
+
+            Refresh();
+            Thread.Sleep(500);
+
+            recieptNames.Text += $"\n  Total";
+            recieptPrices.Text += $"\n{totalPrice.ToString("C")}";
+
+            Refresh();
+            Thread.Sleep(500);
+
+            recieptNames.Text += $"\n\n  Tendered";
+            recieptPrices.Text += $"\n\n{tenderedNumber.ToString("C")}";
+
+            Refresh();
+            Thread.Sleep(500);
+
+            recieptNames.Text += $"\n  Change";
+            recieptPrices.Text += $"\n{changeDue.ToString("C")}";
+
+            Refresh();
+            Thread.Sleep(500);
+
+            thankYouOutput.Text += $"Thank You For Your Purchase";
+        }
+
+        private void NewOrderButton_Click(object sender, EventArgs e)
+        {
+            burgersTextBox.Text = "";
+            friesTextBox.Text = "";
+            drinksTextBox.Text = "";
+            subTotalPriceLabel.Text = "";
+            taxPriceLabel.Text = "";
+            totalPriceLabel.Text = "";
+            tenderedTextBox.Text = "";
+            changePriceLabel.Text = "";
+            dateLabel.Text = "";
+            recieptNames.Text = "";
+            recieptFoodAmounts.Text = "";
+            recieptPrices.Text = "";
+            thankYouOutput.Text = "";
         }
     }
 }

@@ -51,7 +51,12 @@
             this.redLine = new System.Windows.Forms.Label();
             this.recieptOutputLabel = new System.Windows.Forms.Label();
             this.newOrderButton = new System.Windows.Forms.Button();
-            this.NameLabel = new System.Windows.Forms.Label();
+            this.nameLabel = new System.Windows.Forms.Label();
+            this.recieptNames = new System.Windows.Forms.Label();
+            this.recieptFoodAmounts = new System.Windows.Forms.Label();
+            this.recieptPrices = new System.Windows.Forms.Label();
+            this.dateLabel = new System.Windows.Forms.Label();
+            this.thankYouOutput = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // burgerOutputLabel
@@ -267,6 +272,7 @@
             this.recieptOutputLabel.Name = "recieptOutputLabel";
             this.recieptOutputLabel.Size = new System.Drawing.Size(328, 395);
             this.recieptOutputLabel.TabIndex = 21;
+            this.recieptOutputLabel.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // newOrderButton
             // 
@@ -277,22 +283,69 @@
             this.newOrderButton.TabIndex = 22;
             this.newOrderButton.Text = "New Order";
             this.newOrderButton.UseVisualStyleBackColor = true;
+            this.newOrderButton.Click += new System.EventHandler(this.NewOrderButton_Click);
             // 
-            // NameLabel
+            // nameLabel
             // 
-            this.NameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.NameLabel.Location = new System.Drawing.Point(389, 68);
-            this.NameLabel.Name = "NameLabel";
-            this.NameLabel.Size = new System.Drawing.Size(267, 33);
-            this.NameLabel.TabIndex = 23;
-            this.NameLabel.Text = "Greasers Grill";
-            this.NameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.NameLabel.Visible = false;
+            this.nameLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nameLabel.Location = new System.Drawing.Point(389, 68);
+            this.nameLabel.Name = "nameLabel";
+            this.nameLabel.Size = new System.Drawing.Size(267, 33);
+            this.nameLabel.TabIndex = 23;
+            this.nameLabel.Text = "Greasers Grill";
+            this.nameLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.nameLabel.Visible = false;
+            // 
+            // recieptNames
+            // 
+            this.recieptNames.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.recieptNames.Location = new System.Drawing.Point(377, 143);
+            this.recieptNames.Name = "recieptNames";
+            this.recieptNames.Size = new System.Drawing.Size(140, 258);
+            this.recieptNames.TabIndex = 24;
+            // 
+            // recieptFoodAmounts
+            // 
+            this.recieptFoodAmounts.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.recieptFoodAmounts.Location = new System.Drawing.Point(523, 143);
+            this.recieptFoodAmounts.Name = "recieptFoodAmounts";
+            this.recieptFoodAmounts.Size = new System.Drawing.Size(52, 258);
+            this.recieptFoodAmounts.TabIndex = 25;
+            // 
+            // recieptPrices
+            // 
+            this.recieptPrices.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.recieptPrices.Location = new System.Drawing.Point(581, 143);
+            this.recieptPrices.Name = "recieptPrices";
+            this.recieptPrices.Size = new System.Drawing.Size(75, 258);
+            this.recieptPrices.TabIndex = 26;
+            this.recieptPrices.TextAlign = System.Drawing.ContentAlignment.TopRight;
+            // 
+            // dateLabel
+            // 
+            this.dateLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateLabel.Location = new System.Drawing.Point(381, 104);
+            this.dateLabel.Name = "dateLabel";
+            this.dateLabel.Size = new System.Drawing.Size(275, 39);
+            this.dateLabel.TabIndex = 27;
+            // 
+            // thankYouOutput
+            // 
+            this.thankYouOutput.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.thankYouOutput.Location = new System.Drawing.Point(381, 404);
+            this.thankYouOutput.Name = "thankYouOutput";
+            this.thankYouOutput.Size = new System.Drawing.Size(275, 23);
+            this.thankYouOutput.TabIndex = 28;
             // 
             // cashRegister
             // 
             this.ClientSize = new System.Drawing.Size(699, 486);
-            this.Controls.Add(this.NameLabel);
+            this.Controls.Add(this.thankYouOutput);
+            this.Controls.Add(this.dateLabel);
+            this.Controls.Add(this.recieptPrices);
+            this.Controls.Add(this.recieptFoodAmounts);
+            this.Controls.Add(this.recieptNames);
+            this.Controls.Add(this.nameLabel);
             this.Controls.Add(this.newOrderButton);
             this.Controls.Add(this.recieptOutputLabel);
             this.Controls.Add(this.redLine);
@@ -351,7 +404,12 @@
         private System.Windows.Forms.Label redLine;
         private System.Windows.Forms.Label recieptOutputLabel;
         private System.Windows.Forms.Button newOrderButton;
-        private System.Windows.Forms.Label NameLabel;
+        private System.Windows.Forms.Label nameLabel;
+        private System.Windows.Forms.Label recieptNames;
+        private System.Windows.Forms.Label recieptFoodAmounts;
+        private System.Windows.Forms.Label recieptPrices;
+        private System.Windows.Forms.Label dateLabel;
+        private System.Windows.Forms.Label thankYouOutput;
     }
 }
 
