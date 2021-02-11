@@ -14,6 +14,12 @@ namespace WindowsFormsApp1
 {
     public partial class cashRegister : Form
     {
+        //Matthew Barber
+        //Mr.Theordoreopolous
+        //2.11.21
+        //Cash Register Assignment
+
+
         //Global Variable
 
         int burgersNumber = 0;
@@ -33,7 +39,7 @@ namespace WindowsFormsApp1
         double totalFriesPrice = 0;
         double totalDrinksPrice = 0;
 
-        
+
 
 
         public cashRegister()
@@ -43,6 +49,8 @@ namespace WindowsFormsApp1
 
         private void TotalButton_Click(object sender, EventArgs e)
         {
+            //This uses the variables typed into the numbers of food items to caltulate the total
+
             try
             {
                 recieptOutputLabel.Text = "";
@@ -72,6 +80,9 @@ namespace WindowsFormsApp1
 
         private void ChangeButton_Click(object sender, EventArgs e)
         {
+            //Uses variables to calculate the change
+
+
             try
             {
                 recieptOutputLabel.Text = "";
@@ -87,6 +98,9 @@ namespace WindowsFormsApp1
 
         private void PrintRecieptButton_Click(object sender, EventArgs e)
         {
+            //Uses the variables to print off all the information
+
+
             recieptOutputLabel.Text = "";
             dateLabel.Text = "";
             recieptNames.Text = "";
@@ -172,6 +186,9 @@ namespace WindowsFormsApp1
 
         private void NewOrderButton_Click(object sender, EventArgs e)
         {
+            //Clears everything
+
+
             recieptOutputLabel.Text = "";
             nameLabel.Visible = false;
             burgersTextBox.Text = "";
