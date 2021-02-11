@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(cashRegister));
             this.burgerOutputLabel = new System.Windows.Forms.Label();
             this.friesOutputLabel = new System.Windows.Forms.Label();
             this.drinkOutputLabel = new System.Windows.Forms.Label();
@@ -301,23 +302,23 @@
             this.recieptNames.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.recieptNames.Location = new System.Drawing.Point(377, 143);
             this.recieptNames.Name = "recieptNames";
-            this.recieptNames.Size = new System.Drawing.Size(140, 258);
+            this.recieptNames.Size = new System.Drawing.Size(126, 258);
             this.recieptNames.TabIndex = 24;
             // 
             // recieptFoodAmounts
             // 
             this.recieptFoodAmounts.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.recieptFoodAmounts.Location = new System.Drawing.Point(523, 143);
+            this.recieptFoodAmounts.Location = new System.Drawing.Point(501, 143);
             this.recieptFoodAmounts.Name = "recieptFoodAmounts";
-            this.recieptFoodAmounts.Size = new System.Drawing.Size(52, 258);
+            this.recieptFoodAmounts.Size = new System.Drawing.Size(74, 86);
             this.recieptFoodAmounts.TabIndex = 25;
             // 
             // recieptPrices
             // 
             this.recieptPrices.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.recieptPrices.Location = new System.Drawing.Point(581, 143);
+            this.recieptPrices.Location = new System.Drawing.Point(533, 143);
             this.recieptPrices.Name = "recieptPrices";
-            this.recieptPrices.Size = new System.Drawing.Size(75, 258);
+            this.recieptPrices.Size = new System.Drawing.Size(123, 258);
             this.recieptPrices.TabIndex = 26;
             this.recieptPrices.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
@@ -340,10 +341,10 @@
             // cashRegister
             // 
             this.ClientSize = new System.Drawing.Size(699, 486);
+            this.Controls.Add(this.recieptFoodAmounts);
             this.Controls.Add(this.thankYouOutput);
             this.Controls.Add(this.dateLabel);
             this.Controls.Add(this.recieptPrices);
-            this.Controls.Add(this.recieptFoodAmounts);
             this.Controls.Add(this.recieptNames);
             this.Controls.Add(this.nameLabel);
             this.Controls.Add(this.newOrderButton);
@@ -369,6 +370,7 @@
             this.Controls.Add(this.drinkOutputLabel);
             this.Controls.Add(this.friesOutputLabel);
             this.Controls.Add(this.burgerOutputLabel);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "cashRegister";
             this.Text = "Cash Register";
             this.ResumeLayout(false);
